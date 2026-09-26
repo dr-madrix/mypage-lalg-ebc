@@ -21,3 +21,31 @@ h1 {
 h2 {
   color: #34495e;
 }
+
+/* Sección de series recomendadas */
+.series-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.serie {
+  width: 220px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.serie img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.serie h3 {
+  margin: 10px 0 5px;
+}
