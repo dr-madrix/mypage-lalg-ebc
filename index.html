@@ -3,41 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Luis Adrián | Entrega Fase 1</title>
+  <title>Adrián Lara | Product Manager</title>
+  <meta name="description" content="Luis Adrián Lara García, Product Manager. Blogs, contenido y consultorías sobre Hypothesis Driven Development y decisiones basadas en datos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Adrian</h1>
-    <p>Bienvenido a mi sitio web personal</p>
+
+  <!-- ===== ENCABEZADO / MENÚ ===== -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="nav__logo">ADRIÁN<span>.</span></a>
+      <input type="checkbox" id="menu-toggle" class="nav__toggle" aria-label="Abrir menú">
+      <label for="menu-toggle" class="nav__burger" aria-hidden="true"><span></span></label>
+      <nav class="nav__links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#blog">Blog</a>
+        <a href="#consultorias">Consultorías</a>
+        <a href="#contacto" class="nav__cta">Contacto</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>Estudiante de la Licenciatura en Programación y Transformación Digital</p>
+    <!-- ===== HERO ===== -->
+    <section id="inicio" class="hero">
+      <div class="container hero__inner">
+        <div class="hero__photo" aria-label="Foto de Adrián">LA</div>
+        <div class="hero__text">
+          <p class="eyebrow">Product Manager</p>
+          <h1>Hola, soy Adrián.</h1>
+          <p class="lead">Escribo sobre cómo tomar decisiones de producto con <strong>datos y experimentos</strong>, no con plantillas.</p>
+          <div class="hero__buttons">
+            <a href="#blog" class="btn btn--primary">Leer mis blogs</a>
+            <a href="#consultorias" class="btn btn--outline">Trabajemos juntos</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="series">
-      <h2>Mis series recomendadas</h2>
-      <div class="series-grid">
-        <article class="serie">
-          <img src="imgs/i-bbad.jpg" alt="Póster de Breaking Bad">
-          <h3>Breaking Bad</h3>
-          <p>Un profesor de química se convierte en fabricante de metanfetamina.</p>
-        </article>
-        <article class="serie">
-          <img src="imgs/i-sopranos.jpg" alt="Póster de The Sopranos">
-          <h3>The Sopranos</h3>
-          <p>Un jefe de la mafia equilibra su familia, su "negocio" y la terapia.</p>
-        </article>
-        <article class="serie">
-          <img src="imgs/i-blackmirror.jpg" alt="Póster de Black Mirror">
-          <h3>Black Mirror</h3>
-          <p>Historias independientes sobre el lado oscuro de la tecnología.</p>
-        </article>
+    <!-- ===== SOBRE MÍ ===== -->
+    <section id="sobre-mi" class="section">
+      <div class="container">
+        <p class="eyebrow">01 · Sobre mí</p>
+        <h2>De la intuición a la evidencia</h2>
+        <p class="section__intro">Soy Luis Adrián Lara García. Ayudo a Product Managers y equipos de producto a dejar de decidir por intuición: formular hipótesis claras, diseñar experimentos y medir lo que de verdad importa.</p>
+
+        <div class="cards cards--3">
+          <article class="card">
+            <span class="card__icon">H₁</span>
+            <h3>Hypothesis Driven Development</h3>
+            <p>Cada feature empieza como una hipótesis que se puede probar, no como una idea en el roadmap.</p>
+          </article>
+          <article class="card">
+            <span class="card__icon">Δ%</span>
+            <h3>Decisiones con datos</h3>
+            <p>Métricas que guían decisiones, no reportes que nadie lee.</p>
+          </article>
+          <article class="card">
+            <span class="card__icon">→</span>
+            <h3>Estrategia de producto</h3>
+            <p>Conectar los experimentos con los objetivos del negocio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BLOGS Y CONTENIDO ===== -->
+    <section id="blog" class="section section--alt">
+      <div class="container">
+        <p class="eyebrow">02 · Blogs y contenido</p>
+        <h2>Lo que escribo</h2>
+
+        <div class="cards cards--3">
+          <article class="post">
+            <div class="post__img post__img--1"></div>
+            <div class="post__body">
+              <span class="tag">Artículo</span>
+              <h3>Cómo escribir una buena hipótesis de producto</h3>
+              <p>Una estructura simple para que tus hipótesis se puedan probar y medir.</p>
+              <a href="#" class="link">Leer más →</a>
+            </div>
+          </article>
+          <article class="post">
+            <div class="post__img post__img--2"></div>
+            <div class="post__body">
+              <span class="tag">Artículo</span>
+              <h3>Métricas que sí importan</h3>
+              <p>Cómo distinguir una métrica de vanidad de una que guía decisiones.</p>
+              <a href="#" class="link">Leer más →</a>
+            </div>
+          </article>
+          <article class="post">
+            <div class="post__img post__img--3"></div>
+            <div class="post__body">
+              <span class="tag">Video</span>
+              <h3>Adiós al roadmap de features</h3>
+              <p>Por qué un roadmap de problemas funciona mejor que una lista de entregables.</p>
+              <a href="#" class="link">Ver video →</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fase 4: aquí irá el botón "Me sirvió" con el contador (h2 en 0) -->
+      </div>
+    </section>
+
+    <!-- ===== CONSULTORÍAS ===== -->
+    <section id="consultorias" class="section">
+      <div class="container">
+        <p class="eyebrow">03 · Consultorías y asesorías</p>
+        <h2>Trabajemos juntos</h2>
+
+        <div class="cards cards--3">
+          <article class="service">
+            <h3>Asesoría 1:1</h3>
+            <p>Sesiones individuales para PMs que quieren trabajar con hipótesis y métricas.</p>
+            <a href="#contacto" class="btn btn--outline btn--small">Me interesa</a>
+          </article>
+          <article class="service service--featured">
+            <h3>Taller para equipos</h3>
+            <p>Un taller práctico para que tu equipo diseñe y corra sus primeros experimentos.</p>
+            <a href="#contacto" class="btn btn--primary btn--small">Me interesa</a>
+          </article>
+          <article class="service">
+            <h3>Revisión de roadmap</h3>
+            <p>Reviso tu roadmap y tus métricas, y te propongo qué validar primero.</p>
+            <a href="#contacto" class="btn btn--outline btn--small">Me interesa</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="section contact">
+      <div class="container contact__inner">
+        <h2>¿Trabajamos juntos?</h2>
+        <p>¿Quieres llevar tu producto con más rigor? Agenda una llamada de 30 minutos.</p>
+        <div class="contact__buttons">
+          <a href="mailto:adrix.laragarcia@gmail.com?subject=Quiero%20agendar%20una%20llamada" class="btn btn--light">Agenda una llamada</a>
+          <a href="mailto:adrix.laragarcia@gmail.com" class="btn btn--ghost">adrix.laragarcia@gmail.com</a>
+        </div>
       </div>
     </section>
   </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Luis Adrián Lara García</p>
+      <a href="mailto:adrix.laragarcia@gmail.com" class="footer__mail">adrix.laragarcia@gmail.com</a>
+    </div>
+  </footer>
+
 </body>
 </html>
