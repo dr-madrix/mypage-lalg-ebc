@@ -6,7 +6,7 @@
    3. CSS Grid                             -> tarjetas (.cards)
    4. Media queries (diseño responsivo)    -> final del archivo
    5. Transiciones y transformaciones      -> botones y tarjetas (:hover)
-   6. Gradientes lineales                  -> imágenes de blog y contacto
+   6. Gradientes lineales                  -> sección de contacto
    7. border-radius y box-shadow           -> tarjetas y botones
    8. scroll-behavior: smooth              -> navegación entre secciones
    ========================================================= */
@@ -185,14 +185,23 @@ h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
   background: var(--accent-soft);
 }
 
-/* Blog (6. gradientes) */
+/* Blog: tarjetas con imagen */
 .post { overflow: hidden; display: flex; flex-direction: column; }
-.post__img { height: 160px; }
-.post__img--1 { background: linear-gradient(135deg, #2f5bea, #7aa2ff); }
-.post__img--2 { background: linear-gradient(135deg, #14161c, #4a4f5c); }
-.post__img--3 { background: linear-gradient(135deg, #0ea5a4, #7ee0d4); }
+.post__img {
+  height: 190px;
+  padding: 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.post__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* la imagen completa, sin recortarse */
+  transition: transform .35s ease;
+}
+.post:hover .post__img img { transform: scale(1.04); }
 .post__body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.post__body .link { margin-top: auto; }
+.post__body .link { margin-top: auto; padding-top: 8px; }
 .tag {
   align-self: flex-start;
   font-family: var(--mono);
@@ -209,6 +218,35 @@ h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
 .service { padding: 30px 28px; display: flex; flex-direction: column; gap: 10px; }
 .service .btn { align-self: flex-start; margin-top: 12px; }
 .service--featured { border: 2px solid var(--accent); }
+
+/* ---------- BOTÓN "ME SIRVIÓ" Y CONTADOR (Fase 4) ---------- */
+.likes {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+.likes__question { font-weight: 600; color: var(--ink-soft); }
+.likes__btn { font-family: inherit; cursor: pointer; font-size: 1rem; }
+.likes__btn:active { transform: scale(.96); }
+.likes__count {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 4px 0 0;
+  font-variant-numeric: tabular-nums;
+}
+.likes__label { font-size: .9rem; color: var(--muted); }
+
+/* Animación del número con @keyframes */
+@keyframes pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+.likes__count--pop { animation: pop .35s ease; }
 
 /* ---------- CONTACTO ---------- */
 .contact {

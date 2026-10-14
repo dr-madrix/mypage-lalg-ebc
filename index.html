@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <!-- AOS · Bloque 1: CSS de la librería de animaciones -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,10 +33,10 @@
     <!-- ===== HERO ===== -->
     <section id="inicio" class="hero">
       <div class="container hero__inner">
-        <div class="hero__photo" aria-label="Foto de Adrián">LA</div>
+        <div class="hero__photo" aria-label="Foto de Adrián" data-aos="zoom-in">LA</div>
         <div class="hero__text">
           <p class="eyebrow">Product Manager</p>
-          <h1>Hola, soy Adrián.</h1>
+          <h1 data-aos="fade-up">Hola, soy Adrián.</h1>
           <p class="lead">Escribo sobre cómo tomar decisiones de producto con <strong>datos y experimentos</strong>, no con plantillas.</p>
           <div class="hero__buttons">
             <a href="#blog" class="btn btn--primary">Leer mis blogs</a>
@@ -48,21 +50,21 @@
     <section id="sobre-mi" class="section">
       <div class="container">
         <p class="eyebrow">01 · Sobre mí</p>
-        <h2>De la intuición a la evidencia</h2>
+        <h2 data-aos="fade-up">De la intuición a la evidencia</h2>
         <p class="section__intro">Soy Luis Adrián Lara García. Ayudo a Product Managers y equipos de producto a dejar de decidir por intuición: formular hipótesis claras, diseñar experimentos y medir lo que de verdad importa.</p>
 
         <div class="cards cards--3">
-          <article class="card">
+          <article class="card" data-aos="fade-up" data-aos-delay="0">
             <span class="card__icon">H₁</span>
             <h3>Hypothesis Driven Development</h3>
             <p>Cada feature empieza como una hipótesis que se puede probar, no como una idea en el roadmap.</p>
           </article>
-          <article class="card">
+          <article class="card" data-aos="fade-up" data-aos-delay="100">
             <span class="card__icon">Δ%</span>
             <h3>Decisiones con datos</h3>
             <p>Métricas que guían decisiones, no reportes que nadie lee.</p>
           </article>
-          <article class="card">
+          <article class="card" data-aos="fade-up" data-aos-delay="200">
             <span class="card__icon">→</span>
             <h3>Estrategia de producto</h3>
             <p>Conectar los experimentos con los objetivos del negocio.</p>
@@ -75,39 +77,45 @@
     <section id="blog" class="section section--alt">
       <div class="container">
         <p class="eyebrow">02 · Blogs y contenido</p>
-        <h2>Lo que escribo</h2>
+        <h2 data-aos="fade-up">Lo que escribo</h2>
 
         <div class="cards cards--3">
-          <article class="post">
-            <div class="post__img post__img--1"></div>
+          <article class="post" data-aos="fade-up" data-aos-delay="0">
+            <figure class="post__img"><img src="img/product-management.png" alt="Diagrama de Product Management: construir el producto correcto y construir bien el producto" loading="lazy"></figure>
             <div class="post__body">
               <span class="tag">Artículo</span>
-              <h3>Cómo escribir una buena hipótesis de producto</h3>
-              <p>Una estructura simple para que tus hipótesis se puedan probar y medir.</p>
+              <h3>¿Qué es Product Management?</h3>
+              <p>La intersección entre construir el producto correcto y construir bien el producto.</p>
               <a href="#" class="link">Leer más →</a>
             </div>
           </article>
-          <article class="post">
-            <div class="post__img post__img--2"></div>
+          <article class="post" data-aos="fade-up" data-aos-delay="100">
+            <figure class="post__img"><img src="img/scrum-framework.png" alt="Diagrama del marco de trabajo Scrum" loading="lazy"></figure>
             <div class="post__body">
               <span class="tag">Artículo</span>
-              <h3>Métricas que sí importan</h3>
-              <p>Cómo distinguir una métrica de vanidad de una que guía decisiones.</p>
+              <h3>Scrum de punta a punta</h3>
+              <p>Del Product Backlog al incremento: cómo encaja cada evento del sprint.</p>
               <a href="#" class="link">Leer más →</a>
             </div>
           </article>
-          <article class="post">
-            <div class="post__img post__img--3"></div>
+          <article class="post" data-aos="fade-up" data-aos-delay="200">
+            <figure class="post__img"><img src="img/product-owner.png" alt="Diagrama de las responsabilidades del Product Owner" loading="lazy"></figure>
             <div class="post__body">
-              <span class="tag">Video</span>
-              <h3>Adiós al roadmap de features</h3>
-              <p>Por qué un roadmap de problemas funciona mejor que una lista de entregables.</p>
-              <a href="#" class="link">Ver video →</a>
+              <span class="tag">Artículo</span>
+              <h3>Las 6 responsabilidades del Product Owner</h3>
+              <p>Visión, backlog, priorización, stakeholders, release plan y experimentación.</p>
+              <a href="#" class="link">Leer más →</a>
             </div>
           </article>
         </div>
 
-        <!-- Fase 4: aquí irá el botón "Me sirvió" con el contador (h2 en 0) -->
+        <!-- Fase 4: botón con evento clic y contador en un h2 -->
+        <div class="likes" data-aos="fade-up">
+          <p class="likes__question">¿Te sirvió mi contenido?</p>
+          <button type="button" id="btn-like" class="btn btn--primary likes__btn">👍 Me sirvió</button>
+          <h2 id="contador" class="likes__count">0</h2>
+          <p class="likes__label">personas a las que les sirvió</p>
+        </div>
       </div>
     </section>
 
@@ -115,20 +123,20 @@
     <section id="consultorias" class="section">
       <div class="container">
         <p class="eyebrow">03 · Consultorías y asesorías</p>
-        <h2>Trabajemos juntos</h2>
+        <h2 data-aos="fade-up">Trabajemos juntos</h2>
 
         <div class="cards cards--3">
-          <article class="service">
+          <article class="service" data-aos="fade-up" data-aos-delay="0">
             <h3>Asesoría 1:1</h3>
             <p>Sesiones individuales para PMs que quieren trabajar con hipótesis y métricas.</p>
             <a href="#contacto" class="btn btn--outline btn--small">Me interesa</a>
           </article>
-          <article class="service service--featured">
+          <article class="service service--featured" data-aos="fade-up" data-aos-delay="100">
             <h3>Taller para equipos</h3>
             <p>Un taller práctico para que tu equipo diseñe y corra sus primeros experimentos.</p>
             <a href="#contacto" class="btn btn--primary btn--small">Me interesa</a>
           </article>
-          <article class="service">
+          <article class="service" data-aos="fade-up" data-aos-delay="200">
             <h3>Revisión de roadmap</h3>
             <p>Reviso tu roadmap y tus métricas, y te propongo qué validar primero.</p>
             <a href="#contacto" class="btn btn--outline btn--small">Me interesa</a>
@@ -140,7 +148,7 @@
     <!-- ===== CONTACTO ===== -->
     <section id="contacto" class="section contact">
       <div class="container contact__inner">
-        <h2>¿Trabajamos juntos?</h2>
+        <h2 data-aos="fade-up">¿Trabajamos juntos?</h2>
         <p>¿Quieres llevar tu producto con más rigor? Agenda una llamada de 30 minutos.</p>
         <div class="contact__buttons">
           <a href="mailto:adrix.laragarcia@gmail.com?subject=Quiero%20agendar%20una%20llamada" class="btn btn--light">Agenda una llamada</a>
@@ -158,5 +166,9 @@
     </div>
   </footer>
 
+  <!-- AOS · Bloque 2: JavaScript de la librería de animaciones -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Mi JavaScript: saludo en consola, contador e inicialización de AOS (Bloque 3) -->
+  <script src="script.js"></script>
 </body>
 </html>
